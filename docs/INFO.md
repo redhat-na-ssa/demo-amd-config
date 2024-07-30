@@ -2,14 +2,19 @@
 
 ## AMD kernel module logs
 
-Commands:
+```sh
+oc describe node os-wf2-07.cluster1.sandbox284.opentlc.com
+```
+
+```sh
+Allocatable:
+  amd.com/gpu:        0
+```
 
 ```sh
 lsmod | grep amd
 dmesg | grep amd
 ```
-
-Output:
 
 ```sh
 amdgpu              12054528  0
@@ -167,4 +172,30 @@ drm                   581632  12 drm_kms_helper,amd_sched,amdttm,drm_shmem_helpe
 [  119.742446] amdgpu 0000:dd:00.0: [drm:jpeg_v4_0_3_early_init [amdgpu]] JPEG decode is enabled in VM mode
 [  119.742689] amdgpu 0000:dd:00.0: amdgpu: Fatal error during GPU init
 [  119.743054] amdgpu 0000:dd:00.0: amdgpu: amdgpu: finishing device.
+```
+
+```sh
+oc -n openshift-amd-gpu get pods
+```
+
+```sh
+amd-gpu-operator-controller-manager-7b777dcf56-n2zfd   2/2     Running   0          9h
+dc-internal-registry-device-plugin-6cw88-lqvs6         1/1     Running   0          8h
+dc-internal-registry-node-labeller-x5wlp               1/1     Running   0          8h
+dc-internal-registry-node-metrics-6bqln                1/1     Running   0          8h
+```
+
+```sh
+oc -n openshift-amd-gpu logs dc-internal-registry-device-plugin-6cw88-lqvs6
+```
+
+```sh
+I0730 10:53:51.179074       1 main.go:305] AMD GPU device plugin for Kubernetes
+I0730 10:53:51.179140       1 main.go:305] ./k8s-device-plugin version v1.25.2.7-10-g736a6ef
+I0730 10:53:51.179144       1 main.go:305] hwloc: _VERSION: 2.10.0, _API_VERSION: 0x00020800, _COMPONENT_ABI: 7, Runtime: 0x00020800
+I0730 10:53:51.179151       1 manager.go:42] Starting device plugin manager
+I0730 10:53:51.179156       1 manager.go:46] Registering for system signal notifications
+I0730 10:53:51.179386       1 manager.go:52] Registering for notifications of filesystem changes in device plugin directory
+I0730 10:53:51.179501       1 manager.go:60] Starting Discovery on new plugins
+I0730 10:53:51.179509       1 manager.go:66] Handling incoming signals
 ```
