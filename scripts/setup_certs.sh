@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # see https://ksingh7.medium.com/lets-automate-let-s-encrypt-tls-certs-for-openshift-4-211d6c081875
-set -x
+# set -x
 
 ocp_aws_cluster(){
   TARGET_NS=kube-system
