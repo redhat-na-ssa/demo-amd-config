@@ -1,0 +1,11 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: amd-gpu-operator
+  namespace: openshift-amd-gpu
+spec:
+  channel: patch-me-see-overlays-dir
+  installPlanApproval: Automatic
+  name: amd-gpu-operator
+  source: community-operators
+  sourceNamespace: openshift-marketplace
