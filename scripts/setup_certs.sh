@@ -141,7 +141,7 @@ config_openshift_api_certs(){
 
   if oc -n openshift-config get secret api-certificate; then
     oc patch apiserver cluster \
-      --type=merge -p '{"spec":{"servingCerts": {"namedCertificates": [{"names": ["'"${LE_HOSTNAME}"'"], "servingCertificate": {"name": "api-certificate"}}]}}}'
+      --type=merge -p '{"spec":{"servingCerts": {"namedCertificates": [{"names": ["'"${OCP_API}"'"], "servingCertificate": {"name": "api-certificate"}}]}}}'
   else
     echo "LE Setup: Error api-certificate"
     exit 1
