@@ -1,0 +1,9 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - ../../components/operators/amd-gpu-operator/instance/overlays/default
+  - ../../components/operators/amd-gpu-operator/operator/overlays/alpha
+  - ../../components/operators/kernel-module-management/operator/overlays/stable
+  - https://github.com/redhat-na-ssa/demo-ai-gitops-catalog/components/operators/nfd/instance/overlays/default?ref=main
+  - https://github.com/redhat-na-ssa/demo-ai-gitops-catalog/components/operators/nfd/operator/overlays/stable
