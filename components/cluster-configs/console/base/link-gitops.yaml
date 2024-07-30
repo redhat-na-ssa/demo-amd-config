@@ -5,7 +5,7 @@ metadata:
 spec:
   href: 'https://github.com/redhat-na-ssa/demo-amd-config'
   location: ApplicationMenu
-  text: GitOps - Lab Cluster Config
+  text: GitHub - Lab Cluster Config
   applicationMenu:
     section: Git Repos
     imageURL: /static/assets/github.svg
