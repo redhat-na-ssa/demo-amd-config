@@ -4,4 +4,4 @@ kind: Kustomization
 resources:
   - 00-cluster-config
   - 00-install-operators
-  - 00-web-terminal
+  - web-terminal
