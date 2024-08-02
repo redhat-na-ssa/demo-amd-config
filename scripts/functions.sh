@@ -28,8 +28,8 @@ htpasswd_add_user(){
 }
 
 htpasswd_sort_file(){
-  sort -u "${HTPASSWD}" > tmp
-  mv tmp "${HTPASSWD}"
+  sort -u "${HTPASSWD_FILE}" > tmp
+  mv tmp "${HTPASSWD_FILE}"
 }
 
 htpasswd_get_file(){

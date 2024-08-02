@@ -22,11 +22,11 @@ Encrypt / Decrypt htpasswd w/ `age`
 # get htpasswd from ocp
 htpasswd_get_file
 
-# decrypt
-htpasswd_decrypt_file
-
 # encrypt
 htpasswd_encrypt_file
+
+# decrypt
+htpasswd_decrypt_file
 ```
 
 ## Links
