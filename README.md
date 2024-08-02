@@ -14,4 +14,5 @@ oc apply -k bootstrap/
 
 ## Links
 
-- [AMD GPU Operator](https://github.com/yevgeny-shnaidman/amd-gpu-operator)
+- [Operator Hub - Community AMD GPU Operator](https://github.com/yevgeny-shnaidman/amd-gpu-operator)
+- [ROCm GPU Operator](https://github.com/ROCm/gpu-operator)
