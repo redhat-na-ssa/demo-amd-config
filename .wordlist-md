@@ -2,13 +2,16 @@ amd
 config
 Config
 configs
+decrypt
 GitOps
 gpu
 GPUs
 html
+htpasswd
 httpErrorCodePages
 ingresscontroller
 oc
+ocp
 OCP
 openshift
 OpenShift
