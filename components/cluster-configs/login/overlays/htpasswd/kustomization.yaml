@@ -9,7 +9,7 @@ commonAnnotations:
 
 resources:
   - ../../base
-  - htpasswd-secret.yaml
+  # - htpasswd-secret.yaml
 
 # Patch cluster specific
 patches:
