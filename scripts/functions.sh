@@ -96,3 +96,9 @@ kubeconfig_encrypt_file(){
     -o kubeconfig.age \
     "${KUBECONFIG_FILE}"
 }
+
+ocp_label_amd_nodes(){
+  oc label node \
+    -l feature.node.kubernetes.io/pci-1002.present \
+    node-role.kubernetes.io/amd-gpu=
+}
