@@ -15,4 +15,5 @@ OpenShift
 popd
 pushd
 repo
+ROCm
 yaml
