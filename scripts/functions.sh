@@ -7,6 +7,7 @@ genpass(){
 
 which htpasswd || return
 which oc || return
+[ -e scratch ] || mkdir -p scratch
 
 HTPASSWD_FILE=scratch/htpasswd
 KUBECONFIG_FILE=scratch/kubeconfig
