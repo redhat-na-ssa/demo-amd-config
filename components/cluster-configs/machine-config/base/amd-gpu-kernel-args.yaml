@@ -3,7 +3,7 @@ kind: MachineConfig
 metadata:
   labels:
     # machineconfiguration.openshift.io/role: worker
-    machineconfiguration.openshift.io/extra: amd-gpu
+    machineconfiguration.openshift.io/role: amd-gpu
   name: amd-gpu-kernel-args
 spec:
   kernelArguments:

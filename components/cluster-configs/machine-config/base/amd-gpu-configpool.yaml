@@ -4,8 +4,15 @@ metadata:
   name: amd-gpu
 spec:
   machineConfigSelector:
-    matchLabels:
-      machineconfiguration.openshift.io/extra: amd-gpu
+    # matchLabels:
+    #   machineconfiguration.openshift.io/role: worker
+    #   machineconfiguration.openshift.io/extra: amd-gpu
+    matchExpressions:
+      - key: machineconfiguration.openshift.io/role
+        operator: In
+        values: 
+          - worker
+          - amd-gpu
   nodeSelector:
     matchLabels:
-      node-role.kubernetes.io/amd-gpu-test: ''
+      node-role.kubernetes.io/amd-gpu: ''
