@@ -105,14 +105,15 @@ ocp_label_amd_nodes(){
 }
 
 amd_gpu_get_pods(){
-  oc get pod -A -ogo-template='
-  {{- range .items }}
-    {{- $name := .metadata.name }}
-    {{- $ns := .metadata.namespace }}
-    {{- range $container := .spec.containers }}
-      {{- if and (and (index $container "resources") (index $container.resources "requests")) (index $container.resources.requests "amd.com/gpu") }}
-        {{- $ns }}/{{ $name }}{{ "\n" }}
+  oc get pod -A \
+    -ogo-template='
+    {{- range .items }}
+      {{- $name := .metadata.name }}
+      {{- $ns := .metadata.namespace }}
+      {{- range $container := .spec.containers }}
+        {{- if and (and (index $container "resources") (index $container.resources "requests")) (index $container.resources.requests "amd.com/gpu") }}
+          {{- $ns }}/{{ $name }}{{ "\n" }}
+        {{- end }}
       {{- end }}
-    {{- end }}
-  {{- end }}'
+    {{- end }}'
 }
