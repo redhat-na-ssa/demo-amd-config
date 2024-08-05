@@ -4,6 +4,3 @@ kind: Kustomization
 resources:
   - 99-master-ssh-machineconfig.yaml
   - 99-worker-ssh-machineconfig.yaml
-  - amd-gpu-blacklist.yaml
-  - amd-gpu-configpool.yaml
-  - amd-gpu-kernel-args.yaml
