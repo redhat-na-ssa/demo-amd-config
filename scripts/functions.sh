@@ -104,6 +104,7 @@ ocp_label_amd_nodes(){
     node-role.kubernetes.io/amd-gpu=
 }
 
+# shellcheck disable=SC2016
 amd_gpu_get_pods(){
   oc get pod -A \
     -ogo-template='
