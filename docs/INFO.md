@@ -199,3 +199,9 @@ I0730 10:53:51.179386       1 manager.go:52] Registering for notifications of fi
 I0730 10:53:51.179501       1 manager.go:60] Starting Discovery on new plugins
 I0730 10:53:51.179509       1 manager.go:66] Handling incoming signals
 ```
+
+Get storage on nodes
+
+```sh
+for node in $(oc get node -oname); do echo $node; oc debug $node -q -- chroot /host lsblk 2>&1 | sed 's/^/  /'; done
+```
