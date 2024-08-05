@@ -2,8 +2,9 @@ apiVersion: machineconfiguration.openshift.io/v1
 kind: MachineConfig
 metadata:
   labels:
-    machineconfiguration.openshift.io/role: worker
-  name: amdgpu-kernel-args
+    # machineconfiguration.openshift.io/role: worker
+    machineconfiguration.openshift.io/extra: amd-gpu
+  name: amd-gpu-kernel-args
 spec:
   kernelArguments:
     - pci=realloc=off
