@@ -9,7 +9,7 @@ spec:
     matchExpressions:
       - key: machineconfiguration.openshift.io/role
         operator: In
-        values: 
+        values:
           - worker
           - amd-gpu
   nodeSelector:
