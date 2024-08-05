@@ -5,4 +5,5 @@ resources:
   - ../../components/cluster-configs/console/overlays/default
   - ../../components/cluster-configs/console-samples
   - ../../components/cluster-configs/login/overlays/htpasswd
+  - ../../components/cluster-configs/machine-config/overlays/default
   - ../../components/cluster-configs/namespaces/overlays/limited-sandbox
