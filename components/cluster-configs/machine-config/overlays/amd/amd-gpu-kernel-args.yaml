@@ -7,4 +7,3 @@ metadata:
 spec:
   kernelArguments:
     - pci=realloc=off
-    - modprobe.blacklist=amdgpu

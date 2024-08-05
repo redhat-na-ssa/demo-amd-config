@@ -15,3 +15,5 @@ spec:
           mode: 420
           overwrite: true
           path: /etc/modprobe.d/amdgpu-blacklist.conf
+  kernelArguments:
+    - modprobe.blacklist=amdgpu
