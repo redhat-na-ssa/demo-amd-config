@@ -5,8 +5,7 @@ metadata:
 spec:
   machineConfigSelector:
     # matchLabels:
-    #   machineconfiguration.openshift.io/role: worker
-    #   machineconfiguration.openshift.io/extra: amd-gpu
+    #   machineconfiguration.openshift.io/role: amd-gpu
     matchExpressions:
       - key: machineconfiguration.openshift.io/role
         operator: In
