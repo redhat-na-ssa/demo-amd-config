@@ -1,0 +1,6 @@
+FROM quay.io/yshnaidm/amd_gpu_sources:el9-6.1.1 as sources
+
+FROM registry.access.redhat.com/ubi9/ubi:9.2
+RUN dnf install -y kernel-headers kmod gcc cpp make vim
+
+COPY --from=sources / /source-dump
