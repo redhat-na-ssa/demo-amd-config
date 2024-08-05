@@ -8,10 +8,28 @@ This repo is used to demo AMD GPUs and track the configuration for an OpenShift 
 
 ## Quick Start
 
+Apply cluster config
+
 ```sh
 oc apply -k bootstrap/
 ```
 
+Encrypt / Decrypt htpasswd w/ `age`
+
+```sh
+. scripts/function.sh
+
+# get htpasswd from ocp
+htpasswd_get_file
+
+# encrypt
+htpasswd_encrypt_file
+
+# decrypt
+htpasswd_decrypt_file
+```
+
 ## Links
 
-- [AMD GPU Operator](https://github.com/yevgeny-shnaidman/amd-gpu-operator)
+- [Operator Hub - Community AMD GPU Operator](https://github.com/yevgeny-shnaidman/amd-gpu-operator)
+- [ROCm GPU Operator](https://github.com/ROCm/gpu-operator)

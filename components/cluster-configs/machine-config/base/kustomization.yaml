@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - 99-master-ssh-machineconfig.yaml
   - 99-worker-ssh-machineconfig.yaml
+  - amdgpu-kernel-args.yaml
