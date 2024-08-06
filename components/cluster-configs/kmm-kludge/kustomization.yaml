@@ -3,14 +3,6 @@ kind: Kustomization
 
 namespace: openshift-kmm
 
-generatorOptions:
-  disableNameSuffixHash: true
-
-configMapGenerator:
-  - name: job-restart-operator
-    files:
-      - job.sh
-
 resources:
   - job.yaml
   - kmm-cm.yaml

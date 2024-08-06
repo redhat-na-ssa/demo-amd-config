@@ -14,11 +14,11 @@ rules:
   - apiGroups:
       - ""
     resources:
-      - pod
+      - pods
     verbs:
+      - delete
       - get
       - list
-      - delete
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
@@ -49,15 +49,11 @@ spec:
           command:
             - /bin/bash
             - -c
-            - /scripts/job.sh
-          volumeMounts:
-            - name: scripts
-              mountPath: /scripts
-      volumes:
-        - name: scripts
-          configMap:
-            name: job-restart-operator
-            defaultMode: 0755
+            - |
+              #!/bin/bash
+              oc -n openshift-kmm \
+                -l app.kubernetes.io/component=kmm \
+                delete po
       restartPolicy: Never
       serviceAccount: job-restart-operator
       serviceAccountName: job-restart-operator
