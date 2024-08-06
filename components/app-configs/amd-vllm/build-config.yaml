@@ -68,11 +68,12 @@ spec:
           secretKeyRef:
             key: HF_TOKEN
             name: vllm-env
-      - name: BUILD_LOGLEVEL
-        value: "5"
+      # - name: BUILD_LOGLEVEL
+      #   value: "5"
       - name: MAX_JOBS
         value: "128"
       - name: PYTORCH_ROCM_ARCH
         value: gfx90a;gfx942
   triggers:
     - type: ConfigChange
+    - type: ImageChange

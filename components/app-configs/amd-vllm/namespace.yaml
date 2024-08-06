@@ -5,4 +5,4 @@ metadata:
   annotations:
     openshift.io/description: |
       Welcome to your new home
-    openshift.io/display-name: Template
+    openshift.io/display-name: AMD vLLM
