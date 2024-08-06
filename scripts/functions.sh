@@ -1,5 +1,7 @@
 #!/bin/bash
 
+which oc >/dev/null && alias kubectl=oc
+
 # shellcheck disable=SC2120
 genpass(){
     < /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c"${1:-32}"
@@ -117,4 +119,33 @@ amd_gpu_get_pods(){
         {{- end }}
       {{- end }}
     {{- end }}'
+}
+
+k8s_api_start_proxy(){
+  echo "k8s api proxy: starting..."
+  kubectl proxy -p 8001 &
+  API_PROXY_PID=$!
+  sleep 3
+}
+
+k8s_delete_extended_resource_on_all_nodes(){
+  RESOURCE_NAME=${1:-amd.com~1gpu}
+
+  echo "Attempting to delete extended resource ${RESOURCE_NAME}..."
+
+  k8s_api_start_proxy
+
+  for node in $(kubectl get nodes -o name | sed 's/node.//')
+  do
+    echo "modifying: ${node}"
+    curl "http://localhost:8001/api/v1/nodes/${node}/status" \
+      --header "Content-Type: application/json-patch+json" \
+      --request PATCH \
+      --data '[{"op": "remove", "path": "/status/capacity/'"${RESOURCE_NAME}"'"}]' \
+      --no-fail
+      
+  done
+
+  echo "k8s api proxy: stopping..."
+  kill "${API_PROXY_PID}"
 }
