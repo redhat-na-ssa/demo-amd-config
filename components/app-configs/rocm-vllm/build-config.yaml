@@ -1,23 +1,27 @@
 apiVersion: build.openshift.io/v1
 kind: BuildConfig
 metadata:
-  name: vllm-build
+  name: rocm-vllm
 spec:
-  nodeSelector:
-    node-role.kubernetes.io/amd-gpu: ""
+  # nodeSelector:
+  #   node-role.kubernetes.io/amd-gpu: ""
   output:
     to:
       kind: ImageStreamTag
-      name: amd-vllm:latest
+      name: rocm-vllm:latest
   postCommit: {}
-  resources: {}
+  # resources:
+  #   limits:
+  #     amd.com/gpu: 1
+  #   requests:
+  #     amd.com/gpu: 1
   runPolicy: Serial
   source:
     git:
       # uri: https://github.com/ROCm/vllm
       uri: https://github.com/redhat-na-ssa/demo-amd-config
       ref: main
-    contextDir: /components/app-configs/amd-vllm
+    contextDir: /components/app-configs/rocm-vllm
     type: Git
   strategy:
     type: Docker

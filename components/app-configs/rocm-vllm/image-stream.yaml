@@ -1,7 +1,7 @@
 apiVersion: image.openshift.io/v1
 kind: ImageStream
 metadata:
-  name: amd-vllm
+  name: rocm-vllm
 spec:
   lookupPolicy:
     local: true
