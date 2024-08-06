@@ -1,6 +1,6 @@
 # -----------------------
 # hipBLASLt build stages
-FROM base AS build_hipblaslt
+FROM amd-vllm:base AS build_hipblaslt
 ARG HIPBLASLT_BRANCH="6f65c6e"
 RUN git clone https://github.com/ROCm/hipBLASLt \
     && cd hipBLASLt \
