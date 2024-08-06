@@ -82,6 +82,8 @@ spec:
 apiVersion: build.openshift.io/v1
 kind: BuildConfig
 metadata:
+  annotations:
+    alpha.image.policy.openshift.io/resolve-names: '*'
   name: vllm-build-1
 spec:
   # nodeSelector:

@@ -3,8 +3,8 @@ kind: BuildConfig
 metadata:
   name: vllm-build
 spec:
-  # nodeSelector:
-  #   node-role.kubernetes.io/amd-gpu: ""
+  nodeSelector:
+    node-role.kubernetes.io/amd-gpu: ""
   output:
     to:
       kind: ImageStreamTag
