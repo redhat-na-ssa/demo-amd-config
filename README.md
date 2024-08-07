@@ -39,3 +39,4 @@ htpasswd_decrypt_file
 
 - [Operator Hub - Community AMD GPU Operator](https://github.com/yevgeny-shnaidman/amd-gpu-operator)
 - [ROCm GPU Operator](https://github.com/ROCm/gpu-operator)
+- [ROCm vLLM Example](https://github.com/redhat-na-ssa/demo-amd-vllm)
