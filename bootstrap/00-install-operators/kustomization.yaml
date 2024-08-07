@@ -7,3 +7,4 @@ resources:
   - ../../components/operators/kernel-module-management/operator/overlays/stable
   - https://github.com/redhat-na-ssa/demo-ai-gitops-catalog/components/operators/nfd/instance/overlays/default?ref=main
   - https://github.com/redhat-na-ssa/demo-ai-gitops-catalog/components/operators/nfd/operator/overlays/stable
+  - https://github.com/redhat-na-ssa/demo-ai-gitops-catalog/components/operators/openshift-pipelines/operator/overlays/latest
