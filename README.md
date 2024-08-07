@@ -14,6 +14,12 @@ Apply cluster config
 oc apply -k bootstrap/
 ```
 
+Deploy ROCm vLLM
+
+```sh
+oc apply -k components/app-configs/rocm-vllm/
+```
+
 Encrypt / Decrypt htpasswd w/ `age`
 
 ```sh
