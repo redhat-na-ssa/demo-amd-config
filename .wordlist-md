@@ -2,6 +2,7 @@ amd
 config
 Config
 configs
+CRDs
 decrypt
 GitOps
 gpu

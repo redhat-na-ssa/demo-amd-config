@@ -10,8 +10,16 @@ This repo is used to demo AMD GPUs and track the configuration for an OpenShift 
 
 Apply cluster config
 
+NOTE: you may have to run the following command more than once in order apply CRDs that may not be initially present
+
 ```sh
 oc apply -k bootstrap/
+```
+
+Only AMD GPU config
+
+```sh
+oc apply -k bootstrap/00-amd-config/
 ```
 
 Deploy ROCm vLLM
