@@ -19,8 +19,8 @@ oc apply -k bootstrap/
 Only AMD GPU config
 
 ```sh
-oc apply -k bootstrap/00-amd-config/
 oc apply -k bootstrap/00-install-operators/
+oc apply -k bootstrap/00-amd-config/
 ```
 
 Deploy ROCm vLLM
