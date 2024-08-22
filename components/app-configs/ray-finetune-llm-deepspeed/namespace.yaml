@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  annotations:
+    openshift.io/description: ""
+    openshift.io/display-name: Ray Finetune LLM DeepSpeed
+  labels:
+    kubernetes.io/metadata.name: ray-finetune-llm-deepspeed
+    opendatahub.io/dashboard: "true"
+  name: ray-finetune-llm-deepspeed
