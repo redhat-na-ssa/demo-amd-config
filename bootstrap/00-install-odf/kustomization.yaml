@@ -1,0 +1,22 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - https://github.com/redhat-na-ssa/demo-ai-gitops-catalog/components/operators/local-storage/operator/overlays/stable
+  - https://github.com/redhat-na-ssa/demo-ai-gitops-catalog/components/operators/local-storage/instance/overlays/default
+  - https://github.com/redhat-na-ssa/demo-ai-gitops-catalog/components/operators/odf-operator/aggregate/overlays/local-node-labeler
+
+patches:
+  - target:
+      kind: LocalVolumeSet
+      name: local-disks
+    path: local-vol-set.yaml
+  - target:
+      kind: Job
+      name: job-odf-node-label
+    patch: |-
+      - op: replace
+        path: /spec/template/spec/containers/0/env
+        value:
+          - name: SELECTOR
+            value: node-role.kubernetes.io/worker
