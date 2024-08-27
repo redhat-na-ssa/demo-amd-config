@@ -6,3 +6,4 @@ resources:
   - ../../components/cluster-configs/console-samples
   - ../../components/cluster-configs/login/overlays/htpasswd
   - ../../components/cluster-configs/namespaces/overlays/limited-sandbox
+  - ../../components/cluster-configs/registry/overlays/pvc
