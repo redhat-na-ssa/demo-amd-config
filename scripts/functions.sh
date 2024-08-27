@@ -18,10 +18,12 @@ OCP_ADMIN_GROUP=cluster-readers
 htpasswd_add_user(){
   USER=${1:-admin}
   PASS=${2:-$(genpass)}
+  CONSOLE=$(oc get route -n openshift-console console -o=jsonpath='{.status.ingress[0].host}')
 
   echo "
     USERNAME: ${USER}
     PASSWORD: ${PASS}
+    CONSOLE:  ${CONSOLE}
 
     FILE: ${HTPASSWD_FILE}
   "
