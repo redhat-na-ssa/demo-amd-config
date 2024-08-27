@@ -7,3 +7,4 @@ resources:
   - https://github.com/redhat-na-ssa/demo-amd-vllm/bases/build
   - https://github.com/redhat-na-ssa/demo-amd-vllm/bases/deploy
   - namespace.yaml
+  - limitrange.yaml
