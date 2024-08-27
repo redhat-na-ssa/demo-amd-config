@@ -4,7 +4,6 @@ kind: Kustomization
 namespace: rocm-vllm
 
 resources:
-  - build-config.yaml
-  - image-stream.yaml
+  - https://github.com/redhat-na-ssa/demo-amd-vllm/bases/build
+  - https://github.com/redhat-na-ssa/demo-amd-vllm/bases/deploy
   - namespace.yaml
-  - rolebinding-admin.yaml
